@@ -3,6 +3,8 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 
+const SERVERIP = '192.168.1.7';
+
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -16,7 +18,7 @@ const Register = () => {
     e.preventDefault();
     try {
         const status = true;
-        const response = await axios.post('http://localhost:5000/api/auth/register', { username, password, name, role, status });        
+        const response = await axios.post(`http://${SERVERIP}:5000/api/auth/register`, { username, password, name, role, status });        
         if(response)
             alert('Registro exitoso');
 

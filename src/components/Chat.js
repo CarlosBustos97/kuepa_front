@@ -11,7 +11,7 @@ const Chat = () => {
     
     const fetchMessages = async () => {
       try {
-        const response = await axiosInstance.get('/message/getAll');
+        const response = await axiosInstance.get('/message/getAll');  
         setMessages(response.data);
       } catch (error) {
         console.error('Error al obtener mensajes:', error);
